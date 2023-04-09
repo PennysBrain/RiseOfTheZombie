@@ -6,7 +6,7 @@ public class LaneSystem : MonoBehaviour
 {
 
     public GameObject[] lanes = new GameObject[3];
-    public float currentLane;
+    public int currentLane;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +22,6 @@ public class LaneSystem : MonoBehaviour
 
     public void FreeLaneSpawn()
     {
-        currentLane = Random.Range(0f,3f);
+        currentLane = Random.Range(0,3);
     }
 }
