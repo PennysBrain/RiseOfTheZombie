@@ -15,13 +15,15 @@ public class LaneSystem : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        
+        FreeLaneSpawn();
+
     }
 
     public void FreeLaneSpawn()
     {
         currentLane = Random.Range(0,3);
+        lanes[currentLane].SetActive(!lanes[currentLane].activeSelf);
     }
 }
