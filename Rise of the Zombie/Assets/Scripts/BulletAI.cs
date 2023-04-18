@@ -22,7 +22,8 @@ public class BulletAI : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             Debug.Log("Add Resources HERE for Zombie");
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
+            // Destroy(collision.gameObject);
             Destroy(this.gameObject);
         }
     }

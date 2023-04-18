@@ -4,26 +4,41 @@ using UnityEngine;
 
 public class LaneSystem : MonoBehaviour
 {
-
+    public float spawnTimerReset;
     public GameObject[] lanes = new GameObject[3];
     public int currentLane;
+    public Spawn spawn; 
+
+    public float currentTime;
 
     // Start is called before the first frame update
     void Start()
     {
-        FreeLaneSpawn();  
+        //FreeLaneSpawn();
+        if (spawn == null)
+        {
+            spawn = this.GetComponent<Spawn>();
+        }
+        currentTime = spawnTimerReset;
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
-        FreeLaneSpawn();
-
+        currentTime = currentTime - Time.deltaTime;
+        if (currentTime <= 0f)
+        {
+            FreeLaneSpawn();
+            currentTime = spawnTimerReset;
+        }
     }
 
     public void FreeLaneSpawn()
     {
         currentLane = Random.Range(0,3);
-        lanes[currentLane].SetActive(!lanes[currentLane].activeSelf);
+        int zombo = Random.Range(0, spawn.pool.Length);
+        spawn.pool[zombo].transform.position = lanes[currentLane].transform.position;
+        spawn.pool[zombo].SetActive(true);
+        //lanes[currentLane].SetActive(!lanes[currentLane].activeSelf);
     }
 }
