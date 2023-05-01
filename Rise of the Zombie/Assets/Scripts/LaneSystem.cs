@@ -37,8 +37,11 @@ public class LaneSystem : MonoBehaviour
     {
         currentLane = Random.Range(0,3);
         int zombo = Random.Range(0, spawn.pool.Length);
-        spawn.pool[zombo].transform.position = lanes[currentLane].transform.position;
-        spawn.pool[zombo].SetActive(true);
+        if (spawn.pool[zombo].gameObject.activeSelf== false)
+        {
+            spawn.pool[zombo].transform.position = lanes[currentLane].transform.position;
+            spawn.pool[zombo].SetActive(true);
+        }
         //lanes[currentLane].SetActive(!lanes[currentLane].activeSelf);
     }
 }
