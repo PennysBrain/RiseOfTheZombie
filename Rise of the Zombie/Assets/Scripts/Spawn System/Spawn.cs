@@ -12,7 +12,6 @@ public class Spawn : MonoBehaviour
         FillPool(); 
     }
 
-
     void FillPool() 
     {
         for (int i = 0; i < pool.Length; i++)
