@@ -5,7 +5,6 @@ using UnityEngine;
 public class ZombieAI : MonoBehaviour
 {
     public float speed;
-    // Start is called before the first frame update
 
     // Update is called once per frame
     void Update()
@@ -15,6 +14,8 @@ public class ZombieAI : MonoBehaviour
         if (transform.position.x >= 10)
         {
             this.gameObject.SetActive(false);
+            GameManager.instance.zombieExcaped++;
+            //zombieExcaped++;
         }
     }
 }

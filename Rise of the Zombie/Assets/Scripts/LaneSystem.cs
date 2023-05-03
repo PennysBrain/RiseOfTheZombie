@@ -10,6 +10,9 @@ public class LaneSystem : MonoBehaviour
     public Spawn spawn; 
 
     public float currentTime;
+    public float offSetSpawnSpeed = 2.0f;//Increase Zombie Speed Each new Spawn
+    public float offSetSpawnTime = 0.5f;
+    private float hardResetTime;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +23,7 @@ public class LaneSystem : MonoBehaviour
             spawn = this.GetComponent<Spawn>();
         }
         currentTime = spawnTimerReset;
+        hardResetTime = currentTime;
     }
 
     // Update is called once per frame
@@ -29,7 +33,14 @@ public class LaneSystem : MonoBehaviour
         if (currentTime <= 0f)
         {
             FreeLaneSpawn();
-            currentTime = spawnTimerReset;
+            currentTime = spawnTimerReset - offSetSpawnTime;
+            spawnTimerReset = currentTime;
+            Debug.Log(currentTime.ToString());
+            if (currentTime <= offSetSpawnTime)
+            {
+                Debug.Log("HELPPPPP");
+                spawnTimerReset = hardResetTime;
+            }
         }
     }
 
@@ -41,7 +52,7 @@ public class LaneSystem : MonoBehaviour
         {
             spawn.pool[zombo].transform.position = lanes[currentLane].transform.position;
             spawn.pool[zombo].SetActive(true);
-            spawn.pool[zombo].GetComponent<ZombieAI>().speed -= 0.5f;
+            spawn.pool[zombo].GetComponent<ZombieAI>().speed -= offSetSpawnSpeed;
         }
         //lanes[currentLane].SetActive(!lanes[currentLane].activeSelf);
     }

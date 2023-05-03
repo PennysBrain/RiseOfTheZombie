@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
+
     public int zombieCount;
+    public int zombieExcaped;
+
     public int increase;
     public int decrease;
 
@@ -13,6 +17,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         increase = +10;
+        instance = this;
     }
 
     public void Difficulty()
