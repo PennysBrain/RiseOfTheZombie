@@ -5,8 +5,9 @@ using UnityEngine;
 public class FireButton : MonoBehaviour
 {
     public GameObject Bullet;
+    public GameObject gunOffSetLocation;
     public void CreateBullet()
     {
-        Instantiate(Bullet);
+        Instantiate(Bullet,gunOffSetLocation.transform.position,Quaternion.identity);
     }
 }
