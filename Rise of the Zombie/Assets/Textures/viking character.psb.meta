@@ -8641,66 +8641,6 @@ ScriptedImporter:
     flatten: 0
     isImported: 0
     isVisible: 1
-  - name: final.eyebrows Copy
-    spriteName: 
-    isGroup: 1
-    parentIndex: 1
-    spriteID: 09ee15893deb68f4fabb5753e9fe8bdc
-    layerID: 55
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: final.eyebrows Copy 2
-    spriteName: final.eyebrows Copy 2
-    isGroup: 0
-    parentIndex: 2
-    spriteID: c170b4fc9137dba4a9dbb96bb0aa09ef
-    layerID: 54
-    mosaicPosition: {x: 4, y: 7384}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: final.face Copy
-    spriteName: 
-    isGroup: 1
-    parentIndex: 1
-    spriteID: b97c9999c00073247ae9c8440fefc6e4
-    layerID: 52
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: final.face Copy 2
-    spriteName: final.face Copy 2
-    isGroup: 0
-    parentIndex: 4
-    spriteID: ab99d03a5a3fd5f45bc56f7f66bda170
-    layerID: 51
-    mosaicPosition: {x: 4, y: 4}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: final.beard.pony Copy
-    spriteName: 
-    isGroup: 1
-    parentIndex: 1
-    spriteID: 317c3ac4cb0d19045b8bd60a4587776d
-    layerID: 49
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: final.beard.pony Copy 2
-    spriteName: final.beard.pony Copy 2
-    isGroup: 0
-    parentIndex: 6
-    spriteID: a35ea2efd6f176943a50b8693d346b51
-    layerID: 48
-    mosaicPosition: {x: 828, y: 3169}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
   - name: left.forearm Copy
     spriteName: 
     isGroup: 1
@@ -8714,7 +8654,7 @@ ScriptedImporter:
   - name: handpistol Copy
     spriteName: handpistol Copy
     isGroup: 0
-    parentIndex: 8
+    parentIndex: 2
     spriteID: fabdf936cfd24ab489a8017b46f706d7
     layerID: 45
     mosaicPosition: {x: 4, y: 2200}
@@ -8724,7 +8664,7 @@ ScriptedImporter:
   - name: Layer 54 3 2 Copy
     spriteName: Layer 54 3 2 Copy
     isGroup: 0
-    parentIndex: 8
+    parentIndex: 2
     spriteID: b0d090e95ff31e74a9c47e3c51bcf949
     layerID: 44
     mosaicPosition: {x: 860, y: 5715}
@@ -8744,10 +8684,70 @@ ScriptedImporter:
   - name: left.arm Copy 2
     spriteName: left.arm Copy 2
     isGroup: 0
-    parentIndex: 11
+    parentIndex: 5
     spriteID: 6c2d9368882711949b01f6ca0299766e
     layerID: 41
     mosaicPosition: {x: 1051, y: 7384}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: final.eyebrows Copy
+    spriteName: 
+    isGroup: 1
+    parentIndex: 1
+    spriteID: 09ee15893deb68f4fabb5753e9fe8bdc
+    layerID: 55
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: final.eyebrows Copy 2
+    spriteName: final.eyebrows Copy 2
+    isGroup: 0
+    parentIndex: 7
+    spriteID: c170b4fc9137dba4a9dbb96bb0aa09ef
+    layerID: 54
+    mosaicPosition: {x: 4, y: 7384}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: final.face Copy
+    spriteName: 
+    isGroup: 1
+    parentIndex: 1
+    spriteID: b97c9999c00073247ae9c8440fefc6e4
+    layerID: 52
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: final.face Copy 2
+    spriteName: final.face Copy 2
+    isGroup: 0
+    parentIndex: 9
+    spriteID: ab99d03a5a3fd5f45bc56f7f66bda170
+    layerID: 51
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: final.beard.pony Copy
+    spriteName: 
+    isGroup: 1
+    parentIndex: 1
+    spriteID: 317c3ac4cb0d19045b8bd60a4587776d
+    layerID: 49
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: final.beard.pony Copy 2
+    spriteName: final.beard.pony Copy 2
+    isGroup: 0
+    parentIndex: 11
+    spriteID: a35ea2efd6f176943a50b8693d346b51
+    layerID: 48
+    mosaicPosition: {x: 828, y: 3169}
     flatten: 0
     isImported: 1
     isVisible: 1
