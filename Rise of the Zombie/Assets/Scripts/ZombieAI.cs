@@ -11,7 +11,7 @@ public class ZombieAI : MonoBehaviour
     {
         transform.position += transform.right * Time.deltaTime * speed;
 
-        if (transform.position.x >= 10)
+        if (transform.position.x <= -10)
         {
             this.gameObject.SetActive(false);
             GameManager.instance.zombieExcaped++;

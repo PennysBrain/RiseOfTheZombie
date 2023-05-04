@@ -22,10 +22,11 @@ public class BulletAI : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             Debug.Log("Add Resources HERE for Zombie and Fix FX");
-            GameObject go = collision.gameObject.GetComponent<Enemy>().popEffect;
-            Instantiate(go);
-            GameManager.instance.zombieCount++;
-            collision.gameObject.SetActive(false);
+            collision.gameObject.GetComponent<Enemy>().PopEffect();
+            //GameObject go = collision.gameObject.GetComponent<Enemy>().popEffect;
+           // Instantiate(go,this.transform.position,Quaternion.identity);
+           // GameManager.instance.zombieCount++;
+            //collision.gameObject.SetActive(false);
             // Destroy(collision.gameObject);
             Destroy(this.gameObject);
         }
