@@ -22,6 +22,7 @@ public class BulletAI : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             Debug.Log("Add Resources HERE for Zombie and Fix FX");
+            collision.gameObject.GetComponent<FlashColor>().Flash();
             collision.gameObject.GetComponent<Enemy>().PopEffect();
             //GameObject go = collision.gameObject.GetComponent<Enemy>().popEffect;
            // Instantiate(go,this.transform.position,Quaternion.identity);

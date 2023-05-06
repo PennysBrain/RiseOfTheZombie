@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1946698665}
   - component: {fileID: 2029535707084819498}
   - component: {fileID: 709384870797381956}
+  - component: {fileID: -731675251923519824}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -82,7 +83,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 7.8, y: 5.32}
+  m_Size: {x: 5.32, y: 7.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -125,7 +126,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
     oldSize: {x: 5.32, y: 7.8}
-    newSize: {x: 7.8, y: 5.32}
+    newSize: {x: 5.32, y: 7.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -158,6 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba908f98e5c29144b9a0c9311ccd8325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraShake: {fileID: 0}
   popEffect: {fileID: 6592891597734198929, guid: 813683602ea45ff4aad4a5afbb2a4f7f, type: 3}
 --- !u!82 &709384870797381956
 AudioSource:
@@ -255,3 +257,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-731675251923519824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246688268182053477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f42a1fc7b7c16940ba87db15be955c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: 30b9b0f85e3b03745a2fab7836c6cd1c, type: 2}
+  duration: 0.025

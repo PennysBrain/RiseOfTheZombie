@@ -28,8 +28,8 @@ public class Enemy : MonoBehaviour
         StartCoroutine(cameraShake.Shake(.15f,.8f));
         Instantiate(popEffect, this.transform.position, Quaternion.identity);
         GameManager.instance.zombieCount++;
-        new WaitForSeconds(45f);
-        this.gameObject.SetActive(false);
+        //new WaitForSeconds(45f);
+        //this.gameObject.SetActive(false);
     }
 
 }
