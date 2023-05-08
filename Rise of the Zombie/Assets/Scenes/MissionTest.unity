@@ -1117,6 +1117,7 @@ MonoBehaviour:
   Bullet: {fileID: 5063382701145744885, guid: 42226884051ec38428f17edd788b6fee, type: 3}
   gunOffSetLocation: {fileID: 359163205}
   camShake: {fileID: 1640272247}
+  characterSystem: {fileID: 2105784993}
 --- !u!4 &691754135 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1126033762899165434, guid: 2ee87d7a204e85c438f1ac3e390dbff6, type: 3}
@@ -2442,10 +2443,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f42a1fc7b7c16940ba87db15be955c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
-  originalMaterial: {fileID: 0}
   flashMaterial: {fileID: 2100000, guid: 30b9b0f85e3b03745a2fab7836c6cd1c, type: 2}
-  duration: 0
+  duration: 2
 --- !u!1 &2007833818
 GameObject:
   m_ObjectHideFlags: 0

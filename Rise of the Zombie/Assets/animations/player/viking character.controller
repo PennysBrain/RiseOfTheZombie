@@ -101,14 +101,14 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1102 &-2001550582373775003
+--- !u!1102 &-2797849149507857158
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: run_forward_shooting2
+  m_Name: dying
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -121,7 +121,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 10bec5296001d5540bec7a59919f4a5e, type: 2}
+  m_Motion: {fileID: 7400000, guid: 33ddeee13ce5f8747a992d09a85138c8, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -259,7 +259,7 @@ AnimatorStateMachine:
     m_State: {fileID: 5424505531010502810}
     m_Position: {x: 105, y: 265, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -2001550582373775003}
+    m_State: {fileID: -2797849149507857158}
     m_Position: {x: 140, y: 330, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
