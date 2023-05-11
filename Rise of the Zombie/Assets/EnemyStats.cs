@@ -21,6 +21,7 @@ public class EnemyStats : MonoBehaviour
         {
             Debug.Log("Enemy Died");
             isDead = true;
+            
         }
     }
 
@@ -39,14 +40,5 @@ public class EnemyStats : MonoBehaviour
     {
         healthPoints = hpReset;
         isDead = false;
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Ammo")
-        {
-            AddHealth(-1);
-            CheckIfDead();
-        }
     }
 }

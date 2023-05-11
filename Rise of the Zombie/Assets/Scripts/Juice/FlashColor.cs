@@ -11,7 +11,7 @@ public class FlashColor : MonoBehaviour
     private Material originalMaterial;
     private Coroutine flashRoutine;
 
-    private void Start()
+    private void Awake()
     {
         sprite = this.GetComponent<SpriteRenderer>();
         originalMaterial = sprite.material;

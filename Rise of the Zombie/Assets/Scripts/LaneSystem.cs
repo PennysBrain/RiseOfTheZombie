@@ -53,6 +53,7 @@ public class LaneSystem : MonoBehaviour
             spawn.pool[zombo].transform.position = lanes[currentLane].transform.position;
             spawn.pool[zombo].SetActive(true);
             spawn.pool[zombo].GetComponent<EnemyStats>().ResetStats();
+            spawn.pool[zombo].GetComponent<FlashColor>().Flash();
             spawn.pool[zombo].GetComponent<ZombieAI>().speed += offSetSpawnSpeed;
         }
         //lanes[currentLane].SetActive(!lanes[currentLane].activeSelf);

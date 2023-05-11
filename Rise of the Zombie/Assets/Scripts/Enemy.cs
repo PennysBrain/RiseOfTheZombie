@@ -15,7 +15,8 @@ public class Enemy : MonoBehaviour
     }
 
     private void OnMouseDown()
-    {
+    {        
+        enemyStats.AddHealth(-1);
         PopEffect();
     }
 
@@ -30,8 +31,8 @@ public class Enemy : MonoBehaviour
     {
         StartCoroutine(cameraShake.Shake(.15f,.8f));
         Instantiate(popEffect, this.transform.position, Quaternion.identity);
-        enemyStats.AddHealth(-1);
-        if (enemyStats.isDead)
+        
+        if (enemyStats.isDead == true)
         {
             GameManager.instance.zombieCount++;
             this.gameObject.SetActive(false);

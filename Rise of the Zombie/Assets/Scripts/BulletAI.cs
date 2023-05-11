@@ -9,7 +9,7 @@ public class BulletAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += transform.right * Time.deltaTime * speed;
+        transform.position +=  Time.deltaTime * speed * transform.right ;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -23,6 +23,7 @@ public class BulletAI : MonoBehaviour
         {
             Debug.Log("Add Resources HERE for Zombie and Fix FX");
             collision.gameObject.GetComponent<FlashColor>().Flash();
+            collision.gameObject.GetComponent<EnemyStats>().AddHealth(-1);
             collision.gameObject.GetComponent<Enemy>().PopEffect();
             //GameObject go = collision.gameObject.GetComponent<Enemy>().popEffect;
            // Instantiate(go,this.transform.position,Quaternion.identity);
