@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2029535707084819498}
   - component: {fileID: 709384870797381956}
   - component: {fileID: -731675251923519824}
+  - component: {fileID: 3753631377065289369}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -161,6 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraShake: {fileID: 0}
   popEffect: {fileID: 6592891597734198929, guid: 813683602ea45ff4aad4a5afbb2a4f7f, type: 3}
+  enemyStats: {fileID: 0}
 --- !u!82 &709384870797381956
 AudioSource:
   m_ObjectHideFlags: 0
@@ -271,3 +273,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: 30b9b0f85e3b03745a2fab7836c6cd1c, type: 2}
   duration: 0.025
+--- !u!114 &3753631377065289369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246688268182053477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6a2c7d2baf658043bf6c34ee04029d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoints: 4
+  isDead: 0

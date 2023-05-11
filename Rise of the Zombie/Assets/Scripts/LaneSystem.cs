@@ -38,7 +38,7 @@ public class LaneSystem : MonoBehaviour
             Debug.Log(currentTime.ToString());
             if (currentTime <= offSetSpawnTime)
             {
-                Debug.Log("HELPPPPP");
+                Debug.Log("ResetTimer");
                 spawnTimerReset = hardResetTime;
             }
         }
@@ -52,6 +52,7 @@ public class LaneSystem : MonoBehaviour
         {
             spawn.pool[zombo].transform.position = lanes[currentLane].transform.position;
             spawn.pool[zombo].SetActive(true);
+            spawn.pool[zombo].GetComponent<EnemyStats>().ResetStats();
             spawn.pool[zombo].GetComponent<ZombieAI>().speed += offSetSpawnSpeed;
         }
         //lanes[currentLane].SetActive(!lanes[currentLane].activeSelf);

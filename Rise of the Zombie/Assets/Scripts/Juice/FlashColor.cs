@@ -17,7 +17,7 @@ public class FlashColor : MonoBehaviour
         originalMaterial = sprite.material;
         // Flash();//Testing 
     }
-
+    
     public void Flash()
     {
         // If the flashRoutine is not null, then it is currently running.

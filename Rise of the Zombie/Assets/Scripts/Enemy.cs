@@ -5,12 +5,15 @@ public class Enemy : MonoBehaviour
 {
     public CameraShake cameraShake;
     public GameObject popEffect;
-    private void Awake()
+    public EnemyStats enemyStats;
+
+    private void Start()
     {
         this.GetComponent<AudioSource>().pitch = Random.Range(-2.5f, 2.5f);
         cameraShake = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<CameraShake>();
-        
+        enemyStats = this.GetComponent<EnemyStats>();
     }
+
     private void OnMouseDown()
     {
         PopEffect();
@@ -27,9 +30,16 @@ public class Enemy : MonoBehaviour
     {
         StartCoroutine(cameraShake.Shake(.15f,.8f));
         Instantiate(popEffect, this.transform.position, Quaternion.identity);
-        GameManager.instance.zombieCount++;
+        enemyStats.AddHealth(-1);
+        if (enemyStats.isDead)
+        {
+            GameManager.instance.zombieCount++;
+            this.gameObject.SetActive(false);
+        }
+
+        
         //new WaitForSeconds(45f);
-        //this.gameObject.SetActive(false);
+        //
     }
 
 }
