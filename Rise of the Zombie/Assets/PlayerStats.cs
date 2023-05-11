@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class PlayerStats : MonoBehaviour
         if (healthPoints <= 0)
         {
             Debug.Log("Player Restart Inset Coin now");
+            SceneManager.LoadScene(0);
+
         }
     }
 
@@ -24,6 +27,7 @@ public class PlayerStats : MonoBehaviour
     void AddHealth(float points)
     {
         healthPoints += points;
+        CheckIfDead();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

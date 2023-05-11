@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Rendering;
+//using UnityEditor.Rendering;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     //sets the speed of movement
     private float speed = 20f;
-    private Vector3 target = new Vector3(0f, 0f, 0f);
+    private Vector3 target = new Vector3(-3f, 0f, 0f);
     private Vector2 inputVector = new Vector2(0f, 0f); 
 
     // Update is called once per frame

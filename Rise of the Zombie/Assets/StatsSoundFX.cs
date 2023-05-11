@@ -30,7 +30,7 @@ public class StatsSoundFX : MonoBehaviour
     {
         current = playerStats.healthPoints;
 
-        if (current <= 0)
+        if (current <= 1)
         {
             UpadateSound();
         }
