@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletAI : MonoBehaviour
 {
     public float speed = 4.20f;
+    public float damage =1f;
 
     // Update is called once per frame
     void Update()
@@ -23,7 +24,7 @@ public class BulletAI : MonoBehaviour
         {
             Debug.Log("Add Resources HERE for Zombie and Fix FX");
             collision.gameObject.GetComponent<FlashColor>().Flash();
-            collision.gameObject.GetComponent<EnemyStats>().AddHealth(-1);
+            collision.gameObject.GetComponent<EnemyStats>().AddHealth(-damage);
             collision.gameObject.GetComponent<Enemy>().PopEffect();
             //GameObject go = collision.gameObject.GetComponent<Enemy>().popEffect;
            // Instantiate(go,this.transform.position,Quaternion.identity);
