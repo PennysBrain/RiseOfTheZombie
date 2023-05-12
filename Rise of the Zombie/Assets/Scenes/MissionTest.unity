@@ -405,6 +405,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 834259679, guid: 2ee87d7a204e85c438f1ac3e390dbff6, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 834259679, guid: 2ee87d7a204e85c438f1ac3e390dbff6, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 834259680, guid: 2ee87d7a204e85c438f1ac3e390dbff6, type: 3}
       propertyPath: m_Controller
       value: 
