@@ -1547,7 +1547,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
 --- !u!114 &684940593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1858,6 +1858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c3d2fba0c6e3f408bacceaa8b96096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentWeaponIndex: 0
   guns: []
   weapondHolder: {fileID: 566447531}
   currentGun: {fileID: 0}

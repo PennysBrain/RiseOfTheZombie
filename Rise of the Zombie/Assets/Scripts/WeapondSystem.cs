@@ -26,22 +26,17 @@ public class WeapondSystem : MonoBehaviour
         //Set Default Gun
         guns[0].SetActive(true);
         currentGun = guns[0];
-        currentWeaponIndex = 0;
+        //currentWeaponIndex = 0;
     }
 
     public void ChangeWeapon()
     {
-        //guns[currentWeaponIndex].SetActive(true);
+        guns[currentWeaponIndex].SetActive(true);
+        currentGun = guns[currentWeaponIndex];
         for (int i = 0; i < weaponTotal; i++)
         {
             guns[i] = weapondHolder.transform.GetChild(i).gameObject;
             guns[i].SetActive(false);
         }
-
-        guns[currentWeaponIndex].SetActive(true);
-        currentGun = guns[currentWeaponIndex];
-        //currentWeaponIndex = 0;
-        // currentGun = guns[0];
-        // currentWeaponIndex = 0;
     }
 }
