@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
                 }
                 else
                 //target.x = 5;
-                target.z = 3;
+                target.z = 1.5f;
             }
         }
 
@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
                 }
                 else
                 //target.x = -5;
-                target.z = -3;
+                target.z = -6;
             }
         }
 
