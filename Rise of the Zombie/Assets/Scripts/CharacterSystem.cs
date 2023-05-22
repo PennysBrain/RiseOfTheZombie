@@ -5,10 +5,19 @@ using UnityEngine;
 public class CharacterSystem : MonoBehaviour
 {
     public Animator animator;
+    [SerializeField] PlayerStats stats;
 
     private void Start()
     {
-        animator = this.GetComponent<Animator>();
+        if (!animator)
+        {
+            animator = this.GetComponent<Animator>();
+        }
+
+        if (!stats)
+        {
+            stats = this.GetComponent<PlayerStats>();
+        }
     }
 
     private void Update()
@@ -39,6 +48,11 @@ public class CharacterSystem : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             animator.SetBool("isShooting", false);
+        }
+
+        if (stats.healthPoints <= 0)
+        {
+            animator.SetBool("isDead", true);
         }
     }
 }
