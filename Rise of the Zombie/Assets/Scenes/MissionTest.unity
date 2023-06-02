@@ -1366,6 +1366,7 @@ GameObject:
   - component: {fileID: 352917506}
   - component: {fileID: 352917505}
   - component: {fileID: 352917504}
+  - component: {fileID: 352917507}
   m_Layer: 0
   m_Name: Player2.0
   m_TagString: Player
@@ -1399,7 +1400,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352917500}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f42171a70e247c74cbaa9253d20563d9, type: 3}
   m_Name: 
@@ -1503,6 +1504,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 10
+--- !u!114 &352917507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352917500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a82fb6ff46db914899c2d9399c1c662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1459098087}
+  stats: {fileID: 352917506}
+  weaponds: {fileID: 0}
 --- !u!1 &369669175
 GameObject:
   m_ObjectHideFlags: 0
@@ -2216,7 +2232,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 749339439}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: WeapondSystem, Assembly-CSharp
         m_MethodName: ChangeWeapon
         m_Mode: 1
@@ -2553,7 +2569,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 749339440}
-  - component: {fileID: 749339439}
   - component: {fileID: 749339441}
   m_Layer: 0
   m_Name: WeapondSystem
@@ -2562,22 +2577,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &749339439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 749339438}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01c3d2fba0c6e3f408bacceaa8b96096, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentWeaponIndex: 1
-  guns: []
-  weapondHolder: {fileID: 566447531}
-  currentGun: {fileID: 0}
 --- !u!4 &749339440
 Transform:
   m_ObjectHideFlags: 0
@@ -4868,6 +4867,10 @@ PrefabInstance:
     - target: {fileID: 2862194945892689750, guid: 79b4d0f8847e9824ea8c4f0d98a89639, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.48496994
+      objectReference: {fileID: 0}
+    - target: {fileID: 3200837989935038235, guid: 79b4d0f8847e9824ea8c4f0d98a89639, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5287005652328742705, guid: 79b4d0f8847e9824ea8c4f0d98a89639, type: 3}
       propertyPath: m_LocalRotation.w
