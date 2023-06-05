@@ -39,18 +39,12 @@ public class ControlAnimationSystem : MonoBehaviour
         //Switch Weaponds
         if (Input.GetKeyUp(KeyCode.Q))//Dual gun
         {
-            animator.SetFloat("weaponHoldster", 1);
-            animator.SetTrigger("weaponSwitch");
-            weaponds.currentWeaponIndex = 0;
-            weaponds.ChangeWeapon();
+            WeaponSwitch(0);
         }
 
         if (Input.GetKeyUp(KeyCode.E))//Rifle
         {
-            animator.SetFloat("weaponHoldster", 2);
-            animator.SetTrigger("weaponSwitch");
-            weaponds.currentWeaponIndex = 1;
-            weaponds.ChangeWeapon();
+            WeaponSwitch(1);
         }
 
 
@@ -75,5 +69,13 @@ public class ControlAnimationSystem : MonoBehaviour
         {
             animator.SetBool("isDead", true);
         }
+    }
+
+    public void WeaponSwitch(int weaponCount)
+    {
+        animator.SetFloat("weaponHoldster", (weaponCount + 1));
+        animator.SetTrigger("weaponSwitch");
+        weaponds.currentWeaponIndex = weaponCount;
+        weaponds.ChangeWeapon();
     }
 }

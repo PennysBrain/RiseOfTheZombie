@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1244,7 +1244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1459098087}
   stats: {fileID: 352917506}
-  weaponds: {fileID: 0}
+  weaponds: {fileID: 749339441}
 --- !u!114 &352917508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1326,7 +1326,7 @@ MonoBehaviour:
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1043461120}
 --- !u!114 &352917509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1339,9 +1339,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce56432410d77454eb7f059222efc868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  deadZone: 0.5
+  speed: 10
+  deadZoneLeftStick: 0.5
+  deadZoneRightStick: 0.75
   weaponSystem: {fileID: 749339438}
+  controlAnimationSystem: {fileID: 352917507}
 --- !u!1 &369669175
 GameObject:
   m_ObjectHideFlags: 0
@@ -4835,6 +4837,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShootButton (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3606331901371365393, guid: 4a6fe377530b9d44eb42c050e41d7f50, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4941,7 +4947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9d677f1681015749b15c436eec6d880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MovementRange: 100
+  m_MovementRange: 50
   m_ControlPath: <Gamepad>/leftStick
 --- !u!1 &2007833818
 GameObject:

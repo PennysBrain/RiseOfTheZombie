@@ -1,4 +1,5 @@
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.GraphicsBuffer;
@@ -6,24 +7,22 @@ using static UnityEngine.GraphicsBuffer;
 public class NewInputSystemPlayer : MonoBehaviour
 {
     [SerializeField] float speed = 20f;
-    [SerializeField] float deadZone = 0.5f;
-    //[SerializeField] float jumpForce = 300f;
-    private Vector3 target = new Vector3(-3f, 0f, 3f);
+    [SerializeField] float deadZoneLeftStick = 0.5f;
+    [SerializeField] float deadZoneRightStick = 0.2f;
+    private Vector3 target = new Vector3(-3f, 0f, 0f);
     [SerializeField] GameObject weaponSystem;
+    [SerializeField] ControlAnimationSystem controlAnimationSystem;
 
     Vector2 movementXnY;
-    Rigidbody2D rigiBody;
+    Vector2 rightStickMovement;
 
-    private void Awake() => GetComponent<Rigidbody2D>();
-
-	//transform.position += new Vector3(Time.deltaTime * speed * movementXnY.x, 0, 0); //Time.deltaTime * speed * movementXnY.x,0,0);
     private void Update() => transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
     
 	public void OnMove(InputValue value)
     {
         movementXnY = value.Get<Vector2>();
         Debug.Log(movementXnY.ToString());
-        if (movementXnY.y >= deadZone)
+        if (movementXnY.y >= deadZoneLeftStick)
         {
             if (transform.position.z != 3)
             {
@@ -36,7 +35,7 @@ public class NewInputSystemPlayer : MonoBehaviour
             }
         }
 
-        if(movementXnY.y <= (deadZone * -1))
+        if(movementXnY.y <= (deadZoneLeftStick * -1))
         {
             if (transform.position.z != -3)
             {
@@ -55,8 +54,17 @@ public class NewInputSystemPlayer : MonoBehaviour
         weaponSystem.GetComponent<FireButton>().Shoot();
     }
 
+    public void OnLook(InputValue value)
+    {
+        rightStickMovement = value.Get<Vector2>();
 
-   
-    //=> movementXnY = value.Get<Vector2>();
-    //public void OnFire(InputValue value) => rigiBody.AddForce(Vector2.up * jumpForce);
+        if (rightStickMovement.y >= deadZoneLeftStick)
+        {
+            controlAnimationSystem.WeaponSwitch(0);
+        }
+        if (rightStickMovement.y <= (deadZoneLeftStick * -1))
+        {
+            controlAnimationSystem.WeaponSwitch(1);
+        }
+    }
 }
