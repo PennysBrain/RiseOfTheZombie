@@ -15,9 +15,10 @@ public class NewInputSystemPlayer : MonoBehaviour
 
     private void Awake() => GetComponent<Rigidbody2D>();
 
-    private void Update() => transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);//transform.position += new Vector3(Time.deltaTime * speed * movementXnY.x, 0, 0); //Time.deltaTime * speed * movementXnY.x,0,0);
-
-    public void OnMove(InputValue value)
+	//transform.position += new Vector3(Time.deltaTime * speed * movementXnY.x, 0, 0); //Time.deltaTime * speed * movementXnY.x,0,0);
+    private void Update() => transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+    
+	public void OnMove(InputValue value)
     {
         movementXnY = value.Get<Vector2>();
         Debug.Log(movementXnY.ToString());
