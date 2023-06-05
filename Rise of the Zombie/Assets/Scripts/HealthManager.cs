@@ -1,45 +1,49 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class PlayerStats : MonoBehaviour
+public class HealthManager : MonoBehaviour
 {
     public Image healthBar;
-    public float healthPoints = 10f;
+    public float healthAmount = 100f;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (healthPoints <= 0)
+        if (healthAmount <= 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.O))
         {
-            TakeDamage(1);
+            TakeDamage(20);
         }
 
-        if (Input.GetKeyDown(KeyCode.Y))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Heal(1);
+            Heal(5);
         }
     }
 
     public void TakeDamage(float damage)
     {
-        healthPoints -= damage;
-        healthBar.fillAmount = healthPoints / 10f;
-        CheckIfDead();
+        healthAmount -= damage;
+        healthBar.fillAmount = healthAmount / 100f;
     }
 
     public void Heal(float healingAmount)
     {
-        healthPoints += healingAmount;
-        healthPoints = Mathf.Clamp(healthPoints, 0, 10);
-        healthBar.fillAmount = healthPoints / 10f;
+        healthAmount += healingAmount;
+        healthAmount = Mathf.Clamp(healthAmount, 0, 100);
+
+        healthBar.fillAmount = healthAmount / 100f;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -53,10 +57,9 @@ public class PlayerStats : MonoBehaviour
 
     private void CheckIfDead()
     {
-        if (healthPoints <= -4)
+        if (healthAmount <= 0)
         {
-            Debug.Log("Player Restart Insert Coin now");
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
