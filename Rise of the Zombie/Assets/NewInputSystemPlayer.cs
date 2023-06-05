@@ -58,11 +58,11 @@ public class NewInputSystemPlayer : MonoBehaviour
     {
         rightStickMovement = value.Get<Vector2>();
 
-        if (rightStickMovement.y >= deadZoneLeftStick)
+        if (rightStickMovement.y >= deadZoneRightStick)
         {
             controlAnimationSystem.WeaponSwitch(0);
         }
-        if (rightStickMovement.y <= (deadZoneLeftStick * -1))
+        if (rightStickMovement.y <= (deadZoneRightStick * -1))
         {
             controlAnimationSystem.WeaponSwitch(1);
         }
