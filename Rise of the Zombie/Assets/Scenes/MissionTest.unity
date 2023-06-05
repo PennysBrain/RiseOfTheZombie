@@ -5503,6 +5503,18 @@ PrefabInstance:
       propertyPath: poolType
       value: 
       objectReference: {fileID: 5572961707936629385, guid: afe7df3dd6f5d9442bfd0e85b88eb58b, type: 3}
+    - target: {fileID: 1964738077951991025, guid: 2e8c160a8dd86eb49919e0d9c892e89f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964738078101897570, guid: 2e8c160a8dd86eb49919e0d9c892e89f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964738078124634849, guid: 2e8c160a8dd86eb49919e0d9c892e89f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

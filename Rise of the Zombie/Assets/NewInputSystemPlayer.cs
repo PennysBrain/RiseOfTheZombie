@@ -8,7 +8,7 @@ public class NewInputSystemPlayer : MonoBehaviour
     [SerializeField] float speed = 20f;
     [SerializeField] float deadZone = 0.5f;
     //[SerializeField] float jumpForce = 300f;
-    private Vector3 target = new Vector3(-3f, 0f, 0f);
+    private Vector3 target = new Vector3(-3f, 0f, 3f);
     [SerializeField] GameObject weaponSystem;
 
     Vector2 movementXnY;
@@ -32,7 +32,7 @@ public class NewInputSystemPlayer : MonoBehaviour
                     target.z = 0;
                 }
                 else
-                    target.z = 1.5f;
+                    target.z = 0;
             }
         }
 
