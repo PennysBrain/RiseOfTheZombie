@@ -9,6 +9,7 @@ public class NewInputSystemPlayer : MonoBehaviour
     [SerializeField] float deadZone = 0.5f;
     //[SerializeField] float jumpForce = 300f;
     private Vector3 target = new Vector3(-3f, 0f, 0f);
+    [SerializeField] GameObject weaponSystem;
 
     Vector2 movementXnY;
     Rigidbody2D rigiBody;
@@ -48,6 +49,13 @@ public class NewInputSystemPlayer : MonoBehaviour
             }
         }
     }
+
+    public void OnFire()
+    {
+        weaponSystem.GetComponent<FireButton>().Shoot();
+    }
+
+
    
     //=> movementXnY = value.Get<Vector2>();
     //public void OnFire(InputValue value) => rigiBody.AddForce(Vector2.up * jumpForce);

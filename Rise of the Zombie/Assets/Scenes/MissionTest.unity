@@ -1341,6 +1341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   deadZone: 0.5
+  weaponSystem: {fileID: 749339438}
 --- !u!1 &369669175
 GameObject:
   m_ObjectHideFlags: 0
