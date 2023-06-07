@@ -7,6 +7,7 @@ public class ControlAnimationSystem : MonoBehaviour
     public Animator animator;
     [SerializeField] PlayerStats stats;
     [SerializeField] WeapondSystem weaponds;//Needs optimized
+    [SerializeField] int animationState;
 
     private void Start()
     {
@@ -26,14 +27,12 @@ public class ControlAnimationSystem : MonoBehaviour
         //Movement
         if (Input.GetKey(KeyCode.A))
         {
-            animator.SetBool("isMoving", true);
-            animator.SetFloat("moveForward", -1);
+            SetMovement(true, -1);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            animator.SetBool("isMoving", true);
-            animator.SetFloat("moveForward", 1);
+            SetMovement(true, 1);           
         }
 
         //Switch Weaponds
@@ -50,29 +49,76 @@ public class ControlAnimationSystem : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
         {
-            animator.SetBool("isMoving", false);
-            animator.SetFloat("moveForward", 0);
+            SetIdleState();
         }
         //Shooting
         if (Input.GetKey(KeyCode.Space))
         {
-            animator.SetBool("isShooting", true);
+            SetShootState();
         }
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
             animator.SetBool("isShooting", false);
+            animationState = 0;
         }
 
         //Death
         if (stats.healthPoints <= 0)
         {
             animator.SetBool("isDead", true);
+            animationState = 4;
         }
+    }
+
+    public void SwitchAnimateState() 
+    {
+        switch (animationState)
+        {
+            case 5:
+                print("Why hello there good sir! Let me teach you about Trigonometry!");
+                break;
+            case 4:
+                print("Hello and good day!");
+                break;
+            case 3:
+                print("Whadya want?");
+                break;
+            case 2:
+                print("Grog SMASH!");
+                break;
+            case 1:
+                print("Ulg, glib, Pblblblblb");
+                break;
+            default:
+                print("Incorrect intelligence level.");
+                break;
+        }
+    }
+
+    public void SetIdleState() 
+    {
+        animator.SetBool("isMoving", false);
+        animator.SetFloat("moveForward", 0);
+        animationState = 0;
+    }
+
+    public void SetMovement(bool isMoving, int movesState)
+    {
+        animator.SetBool("isMoving", isMoving);
+        animator.SetFloat("moveForward", movesState);
+        animationState = 1;
+    }
+
+    public void SetShootState()
+    {
+        animator.SetBool("isShooting", true);
+        animationState = 3;
     }
 
     public void WeaponSwitch(int weaponCount)
     {
+        animationState = 2;
         animator.SetFloat("weaponHoldster", (weaponCount + 1));
         animator.SetTrigger("weaponSwitch");
         weaponds.currentWeaponIndex = weaponCount;

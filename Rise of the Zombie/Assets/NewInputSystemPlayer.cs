@@ -11,16 +11,49 @@ public class NewInputSystemPlayer : MonoBehaviour
     [SerializeField] float deadZoneRightStick = 0.2f;
     [SerializeField] GameObject weaponSystem;
     [SerializeField] ControlAnimationSystem controlAnimationSystem;
+    [SerializeField] float timerShootAnimation = 0.5f;
+    [SerializeField] float timerMovementAnimation = 0.5f;
+
+    
 
     [SerializeField] Vector3[] targetPositions = { new Vector3(0f, 0.2f, 0f), new Vector3(0f, 0.2f, -3f), new Vector3(0f, 0.2f, -6f) };
     private int currentTargetIndex = 0;
     private Vector2 movementXnY;
     private Vector2 rightStickMovement;
+    float resetTimerShootAnimation;
+    float resetMovementAnimation;
+
+
+    private void Awake()
+    {
+        resetMovementAnimation = timerMovementAnimation;
+        resetTimerShootAnimation = timerShootAnimation;
+    }
 
     private void Update()
     {
         // Move the player towards the current target position
         transform.position = Vector3.MoveTowards(transform.position, targetPositions[currentTargetIndex], speed * Time.deltaTime);
+        
+        if (transform.position.z == targetPositions[currentTargetIndex].z)
+        {
+            //controlAnimationSystem.SetIdleState();
+           controlAnimationSystem.SetMovement(false, 0);//IDle
+            Debug.Log("WE HAVE ARRIVED");
+        }
+
+        if ((resetTimerShootAnimation + 1) > timerShootAnimation && timerShootAnimation <= 0)
+        {
+            timerShootAnimation -= Time.deltaTime;
+        }
+        else 
+        {
+            timerShootAnimation -= Time.deltaTime;
+            if (timerShootAnimation <= 0)
+                controlAnimationSystem.animator.SetBool("isShooting",false); //Reset Shooting
+
+        }
+
     }
 
     public void OnMove(InputValue value)
@@ -45,6 +78,7 @@ public class NewInputSystemPlayer : MonoBehaviour
 
     private void MoveUp()
     {
+        controlAnimationSystem.SetMovement(true, 1);
         // Move the player up to the higher lane if possible
         if (currentTargetIndex < targetPositions.Length - 1)
         {
@@ -54,6 +88,7 @@ public class NewInputSystemPlayer : MonoBehaviour
 
     private void MoveDown()
     {
+        controlAnimationSystem.SetMovement(true, -1);
         // Move the player down to the lower lane if possible
         if (currentTargetIndex > 0)
         {
@@ -91,7 +126,9 @@ public class NewInputSystemPlayer : MonoBehaviour
 
     public void OnFire()
     {
+        controlAnimationSystem.SetShootState();
         weaponSystem.GetComponent<FireButton>().Shoot();
+        timerShootAnimation = resetTimerShootAnimation;
     }
 
     public void OnLook(InputValue value)
