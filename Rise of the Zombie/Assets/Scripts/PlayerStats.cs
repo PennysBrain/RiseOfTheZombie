@@ -14,7 +14,8 @@ public class PlayerStats : MonoBehaviour
     {
         if (healthPoints <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            CheckIfDead();
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         if (Input.GetKeyDown(KeyCode.T))
