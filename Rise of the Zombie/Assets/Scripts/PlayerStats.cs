@@ -42,7 +42,19 @@ public class PlayerStats : MonoBehaviour
         healthBar.fillAmount = healthPoints / 10f;
     }
 
+    //2D collision
     private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            TakeDamage(1);
+            CheckIfDead();
+        }
+    }
+
+    //3D collison
+
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {

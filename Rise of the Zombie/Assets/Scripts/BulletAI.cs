@@ -34,4 +34,26 @@ public class BulletAI : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Finish")
+        {
+            Destroy(this.gameObject);
+        }
+
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Debug.Log("Add Resources HERE for Zombie and Fix FX");
+            collision.gameObject.GetComponent<FlashColor>().Flash();
+            collision.gameObject.GetComponent<EnemyStats>().AddHealth(-damage);
+            collision.gameObject.GetComponent<Enemy>().PopEffect();
+            //GameObject go = collision.gameObject.GetComponent<Enemy>().popEffect;
+            // Instantiate(go,this.transform.position,Quaternion.identity);
+            // GameManager.instance.zombieCount++;
+            //collision.gameObject.SetActive(false);
+            // Destroy(collision.gameObject);
+            Destroy(this.gameObject);
+        }
+    }
 }
