@@ -7,7 +7,6 @@ public class EnemyStats : MonoBehaviour
     [SerializeField]
     public float healthPoints = 10;
     public bool isDead;
-    [SerializeField]
     float hpReset;
 
     private void Awake()

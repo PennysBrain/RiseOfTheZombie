@@ -31,7 +31,7 @@ public class BulletAI : MonoBehaviour
            // GameManager.instance.zombieCount++;
             //collision.gameObject.SetActive(false);
             // Destroy(collision.gameObject);
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
         }
     }
 
@@ -48,12 +48,14 @@ public class BulletAI : MonoBehaviour
             collision.gameObject.GetComponent<FlashColor>().Flash();
             collision.gameObject.GetComponent<EnemyStats>().AddHealth(-damage);
             collision.gameObject.GetComponent<Enemy>().PopEffect();
+            this.GetComponent<SpriteRenderer>().enabled = false;
+           // this.GetComponent<ZombieAI>().recoilForHit = damage;
             //GameObject go = collision.gameObject.GetComponent<Enemy>().popEffect;
             // Instantiate(go,this.transform.position,Quaternion.identity);
             // GameManager.instance.zombieCount++;
             //collision.gameObject.SetActive(false);
             // Destroy(collision.gameObject);
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
         }
     }
 }

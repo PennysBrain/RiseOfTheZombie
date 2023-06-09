@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 5572961707936629387}
   - component: {fileID: 5572961707936629384}
   - component: {fileID: 2289079857223373934}
+  - component: {fileID: 543770912}
+  - component: {fileID: 543770913}
   m_Layer: 0
   m_Name: Enemy2.5
   m_TagString: Enemy
@@ -36,7 +38,7 @@ Transform:
   m_Children:
   - {fileID: 4708112818411966624}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5572961707936629388
 MonoBehaviour:
@@ -50,7 +52,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8848f0de37a9b80438ad7451d3509dd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -0.4
+  speed: 2
+  wasHit: 1
 --- !u!114 &5572961707936629389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6a2c7d2baf658043bf6c34ee04029d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 2
+  healthPoints: 10
   isDead: 0
   hpReset: 0
 --- !u!114 &5572961707936629387
@@ -212,6 +215,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 2.5, z: 1}
   m_Center: {x: 0, y: 1.5, z: 0}
+--- !u!114 &543770912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5572961707936629385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5efa229053665b64aa452c13b166befd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 6231088124544213004}
+  stats: {fileID: 5572961707936629386}
+  zomboAI: {fileID: 5572961707936629388}
+--- !u!114 &543770913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5572961707936629385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40e7dcf4ce4be7e45b38c168cab6fa22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5572961708806866547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -280,6 +310,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1958615618157897343, guid: 5d088a08e63fc9844aec068379e662db, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 4cb02d5fe9e5fb04faf59bbc5a4a77c6, type: 2}
     - target: {fileID: 2074375301137845936, guid: 5d088a08e63fc9844aec068379e662db, type: 3}
       propertyPath: m_Name
       value: ZombieEnemy
@@ -314,5 +348,10 @@ MonoBehaviour:
 --- !u!4 &4708112818411966624 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 865166720378148563, guid: 5d088a08e63fc9844aec068379e662db, type: 3}
+  m_PrefabInstance: {fileID: 5572961708806866547}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6231088124544213004 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1958615618157897343, guid: 5d088a08e63fc9844aec068379e662db, type: 3}
   m_PrefabInstance: {fileID: 5572961708806866547}
   m_PrefabAsset: {fileID: 0}
