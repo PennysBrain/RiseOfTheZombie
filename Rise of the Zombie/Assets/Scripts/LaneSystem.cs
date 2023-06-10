@@ -48,20 +48,19 @@ public class LaneSystem : MonoBehaviour
     public void FreeLaneSpawn()
     {
         currentLane = Random.Range(0,3);
-        int zombo = Random.Range(0, spawn.pool.Length);
+        int zombo = Random.Range(0, spawn.pool.Length);//Get Random 
+
         if (spawn.pool[zombo].gameObject.activeSelf== false)
         {
             spawn.pool[zombo].transform.position = lanes[currentLane].transform.position;
+            spawn.pool[zombo].GetComponent<ZombieAnimationSystem>().Run();
             spawn.pool[zombo].GetComponent<EnemyStats>().ResetStats();
-            spawn.pool[zombo].GetComponent<FlashColor>().Flash();
             spawn.pool[zombo].GetComponent<ZombieAI>().speed += offSetSpawnSpeed;
-            spawn.pool[zombo].GetComponent<ZombieAI>().wasHit = false;
             spawn.pool[zombo].GetComponent<LightLaneColors>().eyesLight[0].color = laneColors[currentLane];
             spawn.pool[zombo].GetComponent<LightLaneColors>().eyesLight[1].color = laneColors[currentLane];
-
             spawn.pool[zombo].SetActive(true);
-
+            spawn.pool[zombo].GetComponent<FlashColor>().Flash();
+            spawn.pool[zombo].GetComponent<ZombieAI>().wasHit = false;
         }
-        //lanes[currentLane].SetActive(!lanes[currentLane].activeSelf);
     }
 }

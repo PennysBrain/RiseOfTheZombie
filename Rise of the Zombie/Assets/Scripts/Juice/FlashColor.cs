@@ -13,7 +13,7 @@ public class FlashColor : MonoBehaviour
 
     private void Awake()
     {
-        sprite = this.GetComponent<SpriteRenderer>();
+        sprite = this.GetComponentInChildren<SpriteRenderer>();
         originalMaterial = sprite.material;
         // Flash();//Testing 
     }

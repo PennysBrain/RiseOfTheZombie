@@ -644,18 +644,18 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8598535902525855405}
   - {fileID: 7966993552403932727}
   - {fileID: 6975140475985511319}
   - {fileID: 1637797012792833120}
   - {fileID: 3837812674554341721}
-  - {fileID: 8598535902525855405}
   - {fileID: 8297463219974086722}
   - {fileID: 4757890066169645897}
   - {fileID: 7713867159057121400}
   - {fileID: 2472066648500935619}
   - {fileID: 6552618603923176026}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1958615618157897343
 Animator:

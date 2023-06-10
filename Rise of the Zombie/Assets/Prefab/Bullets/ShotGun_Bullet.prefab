@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 154875154}
   - component: {fileID: 154875155}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: 3
     m_CustomResolution: -1
     m_Strength: 1
@@ -81,7 +81,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 129
+    m_Bits: 1937
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 6060549881341725457}
   - component: {fileID: 993779248009490457}
   - component: {fileID: 771638836171503386}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ShotGun_Bullet
   m_TagString: Ammo
   m_Icon: {fileID: 0}
