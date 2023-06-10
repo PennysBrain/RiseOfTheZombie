@@ -35,7 +35,7 @@ public class NewInputSystemPlayer : MonoBehaviour
         // Move the player towards the current target position
         transform.position = Vector3.MoveTowards(transform.position, targetPositions[currentTargetIndex], speed * Time.deltaTime);
         
-        if (transform.position.z == targetPositions[currentTargetIndex].z)
+        if (transform.position.z == targetPositions[currentTargetIndex].z && controlAnimationSystem.animator.GetBool("isMoving"))
         {
             //controlAnimationSystem.SetIdleState();
            controlAnimationSystem.SetMovement(false, 0);//IDle
@@ -51,7 +51,6 @@ public class NewInputSystemPlayer : MonoBehaviour
             timerShootAnimation -= Time.deltaTime;
             if (timerShootAnimation <= 0)
                 controlAnimationSystem.animator.SetBool("isShooting",false); //Reset Shooting
-
         }
 
     }

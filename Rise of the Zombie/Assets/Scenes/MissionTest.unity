@@ -610,10 +610,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy2.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5572961707936629388, guid: a104234e3cbad93458d827f382a5e3cb, type: 3}
-      propertyPath: speed
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 5572961707936629390, guid: a104234e3cbad93458d827f382a5e3cb, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -2367,7 +2363,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 719179154}
   m_LocalRotation: {x: 0.08715578, y: 0, z: 0, w: 0.9961947}
-  m_LocalPosition: {x: 1.4329486, y: 2.589186, z: -8.378462}
+  m_LocalPosition: {x: 2.4443932, y: 2.589186, z: -8.378462}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2872,7 +2868,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043461122}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.4329486, y: 2.1368346, z: -2.7919352}
+  m_LocalPosition: {x: 2.4443932, y: 2.1368346, z: -2.7919352}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6034,6 +6030,50 @@ PrefabInstance:
     - target: {fileID: 1964738077453988473, guid: 2e8c160a8dd86eb49919e0d9c892e89f, type: 3}
       propertyPath: offSetSpawnSpeed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964738077453988473, guid: 2e8c160a8dd86eb49919e0d9c892e89f, type: 3}
+      propertyPath: laneColors.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964738077453988473, guid: 2e8c160a8dd86eb49919e0d9c892e89f, type: 3}
+      propertyPath: laneColors.Array.data[0].b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964738077453988473, guid: 2e8c160a8dd86eb49919e0d9c892e89f, type: 3}
+      propertyPath: laneColors.Array.data[0].g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964738077453988473, guid: 2e8c160a8dd86eb49919e0d9c892e89f, type: 3}
+      propertyPath: laneColors.Array.data[0].r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964738077453988473, guid: 2e8c160a8dd86eb49919e0d9c892e89f, type: 3}
+      propertyPath: laneColors.Array.data[1].b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964738077453988473, guid: 2e8c160a8dd86eb49919e0d9c892e89f, type: 3}
+      propertyPath: laneColors.Array.data[1].g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964738077453988473, guid: 2e8c160a8dd86eb49919e0d9c892e89f, type: 3}
+      propertyPath: laneColors.Array.data[1].r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964738077453988473, guid: 2e8c160a8dd86eb49919e0d9c892e89f, type: 3}
+      propertyPath: laneColors.Array.data[2].b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964738077453988473, guid: 2e8c160a8dd86eb49919e0d9c892e89f, type: 3}
+      propertyPath: laneColors.Array.data[2].g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964738077453988473, guid: 2e8c160a8dd86eb49919e0d9c892e89f, type: 3}
+      propertyPath: laneColors.Array.data[2].r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964738077453988473, guid: 2e8c160a8dd86eb49919e0d9c892e89f, type: 3}
+      propertyPath: laneColors.Array.data[3].r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1964738077453988474, guid: 2e8c160a8dd86eb49919e0d9c892e89f, type: 3}
       propertyPath: m_RootOrder

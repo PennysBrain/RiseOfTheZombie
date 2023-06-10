@@ -6,6 +6,7 @@ public class LaneSystem : MonoBehaviour
 {
     public float spawnTimerReset;
     public GameObject[] lanes = new GameObject[3];
+    public Color[] laneColors = new Color[3]; 
     public int currentLane;
     public Spawn spawn; 
 
@@ -51,11 +52,15 @@ public class LaneSystem : MonoBehaviour
         if (spawn.pool[zombo].gameObject.activeSelf== false)
         {
             spawn.pool[zombo].transform.position = lanes[currentLane].transform.position;
-            spawn.pool[zombo].SetActive(true);
             spawn.pool[zombo].GetComponent<EnemyStats>().ResetStats();
             spawn.pool[zombo].GetComponent<FlashColor>().Flash();
             spawn.pool[zombo].GetComponent<ZombieAI>().speed += offSetSpawnSpeed;
             spawn.pool[zombo].GetComponent<ZombieAI>().wasHit = false;
+            spawn.pool[zombo].GetComponent<LightLaneColors>().eyesLight[0].color = laneColors[currentLane];
+            spawn.pool[zombo].GetComponent<LightLaneColors>().eyesLight[1].color = laneColors[currentLane];
+
+            spawn.pool[zombo].SetActive(true);
+
         }
         //lanes[currentLane].SetActive(!lanes[currentLane].activeSelf);
     }
