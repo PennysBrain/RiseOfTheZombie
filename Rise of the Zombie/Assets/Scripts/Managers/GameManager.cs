@@ -14,29 +14,29 @@ public class GameManager : MonoBehaviour
 
     public int difficultyLevel;
 
+    private ZombieCountUI zombieCountUI;
+
     private void Awake()
     {
-        increase = +10;
         instance = this;
+        increase = 10;
+        zombieCountUI = FindObjectOfType<ZombieCountUI>();
     }
 
     public void Difficulty()
     {
         switch (difficultyLevel)
         {
-            case 1://Easy mode
-
+            case 1: // Easy mode
                 break;
 
-            case 2://Normal Mode
-
+            case 2: // Normal Mode
                 break;
-           
-            case 3://Hard Mode
 
+            case 3: // Hard Mode
                 break;
-            default://Normal
-             
+
+            default: // Normal
                 break;
         }
     }
@@ -45,9 +45,15 @@ public class GameManager : MonoBehaviour
     {
         if (zombieCount >= increase)
         {
-            //
+            // Increase the difficulty
         }
     }
 
-    
+    // Call this method when a zombie is killed
+    public void ZombieKilled()
+    {
+        zombieCount++;
+        zombieCountUI.AddXPOnZombieKill();
+        TurnUpTheHeat();
+    }
 }
