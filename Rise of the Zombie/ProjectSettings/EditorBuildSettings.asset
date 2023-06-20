@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Camp.unity
+    guid: e3cbf510053213a4a97b89eece0b8e99
+  - enabled: 1
     path: Assets/Scenes/MissionTest.unity
     guid: 9891251ecba1e4c40973d53a62f9223b
   m_configObjects: {}
