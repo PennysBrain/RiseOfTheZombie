@@ -3013,7 +3013,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bullet:
   - {fileID: 5063382701145744885, guid: 42226884051ec38428f17edd788b6fee, type: 3}
-  - {fileID: 0}
+  - {fileID: 4376446336058110886, guid: 50fb8fb0019772a4f8a914e8d40aab35, type: 3}
   currentWeaponBulletType: 1
   gunOffSetLocation: {fileID: 305183798}
   camShake: {fileID: 1640272247}
