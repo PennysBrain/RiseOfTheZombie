@@ -8,6 +8,7 @@ public class ControlAnimationSystem : MonoBehaviour
     [SerializeField] PlayerStats stats;
     [SerializeField] WeapondSystem weaponds;//Needs optimized
     [SerializeField] int animationState;
+    private int currentWeaponIndex = -1;
 
     private void Start()
     {
@@ -118,10 +119,14 @@ public class ControlAnimationSystem : MonoBehaviour
 
     public void WeaponSwitch(int weaponCount)
     {
-        animationState = 2;
-        animator.SetFloat("weaponHoldster", (weaponCount + 1));
-        animator.SetTrigger("weaponSwitch");
-        weaponds.currentWeaponIndex = weaponCount;
-        weaponds.ChangeWeapon();
+        if (weaponCount != currentWeaponIndex) // Check if the weapon is different from the current weapon
+        {
+            animationState = 2;
+            animator.SetFloat("weaponHoldster", (weaponCount + 1));
+            animator.SetTrigger("weaponSwitch");
+            weaponds.currentWeaponIndex = weaponCount;
+            weaponds.ChangeWeapon();
+            currentWeaponIndex = weaponCount; // Update the current weapon index
+        }
     }
 }
